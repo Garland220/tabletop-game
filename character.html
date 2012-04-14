@@ -1,0 +1,99 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chosen Few</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style>
+			html,body{margin:0;}
+			.mod { width: 30px; }
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script>
+			function updateMod(target){
+				$(target).removeClass('error');
+				var stat = $(target).val();
+				if (parseInt(stat)){
+					stat = Math.floor((stat - 10)/2);
+				}
+				else{
+					stat = 0;
+				}
+				if (0 <= stat) { stat = "+"+stat; }
+				$(target).parent().find('.mod').val(stat);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div style="float:left;">
+				<label for="name">Name <input id="name" name="name" value="" placeholder="Name" /></label><br /><br />
+
+				<label for="Player">Player <input id="Player" name="Player" value="" placeholder="Player" /></label><br /><br />
+
+				<label for="body">Body <input id="body" name="body" value="" onChange="updateMod(this);" placeholder="Body" /> <input id="bodyMod" name="bodyMod" class="mod" value="0" /></label><br />
+				<label for="mind">Mind <input id="mind" name="mind" value="" onChange="updateMod(this);" placeholder="Mind" /> <input id="mindMod" name="mindMod" class="mod" value="0" /></label><br />
+				<label for="agility">Agility <input id="agility" name="agility" value="" onChange="updateMod(this);" placeholder="Agility" /> <input id="bodyMod" name="bodyMod" class="mod" value="0" /></label><br /><br />
+				<label for="color">Aura <input id="color" value="blue" /></label><br />
+				<label for="pow">Aura Power <input id="pow" value="100" /></label>
+			</div>
+		</div>
+		<div style="float:left;">
+			<canvas id="avatar" width="414" height="586">You are using an older browser.</canvas>
+		</div>
+		<script>
+			var FPS = 32;
+			var cnv = document.getElementById('avatar');
+			var context = cnv.getContext("2d");
+			var glow = 0;
+			var origGlow = $("#pow").val();
+			var targGlow = origGlow;
+
+			var av = new Image();
+			av.src = "img/avatars/male.png";
+
+			function clear(canvas){
+				canvas.fillStyle = "#fff";
+				canvas.fillRect(0, 0, 414, 586);
+			}
+
+			function drawAvatar(canvas){
+				canvas.shadowOffsetX = 0;
+				canvas.shadowOffsetY = 0;
+				canvas.shadowBlur = glow;
+				canvas.shadowColor = $("#color").val();
+				canvas.drawImage(av, 0, 0, 414, 586);
+				canvas.shadowBlur = 0;
+				canvas.shadowColor = null;
+			}
+
+			function update(){
+				origGlow = $("#pow").val();
+				if (glow < targGlow)
+					glow++;
+				else if (glow > targGlow)
+					glow--;
+				else{
+					if (targGlow == origGlow)
+						targGlow = (origGlow/2);
+					else if (targGlow == (origGlow/2))
+						targGlow = origGlow;
+				}
+
+			}
+
+			function draw(canvas){
+				clear(canvas);
+				drawAvatar(canvas);
+			}
+
+			setInterval(function() {
+				update();
+				draw(context);
+			}, 1000/FPS);
+		</script>
+	</body>
+</html>

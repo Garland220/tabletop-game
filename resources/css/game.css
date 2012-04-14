@@ -1,0 +1,184 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	height:100%;
+	width: 100%;
+	background: #000;
+}
+
+body {
+	background: black;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+canvas {
+	background: pink;
+	overflow: hidden;
+}
+
+#container {
+	height:100%;
+	position: relative;
+}
+
+#game {
+	padding-bottom: 100px;
+	height: 100%;
+}
+
+#game-status {
+	height: 60px;
+	background: #000;
+	color: #fff;
+}
+
+#game-status {
+	height: 60px;
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	text-align: center;
+	line-height: 60px;
+}
+
+.game-time-sensative {
+
+}
+
+#game-chat {
+	width: 100%;
+	height: 140px;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+	margin-top: 50px;
+}
+
+#game-chat li {
+	display: inline;
+	padding: 0px 2px;
+	font-size: 10px;
+}
+
+#game-chat div {
+	padding: 0px 50px;
+	overflow-x: hidden;
+	width: 600px;
+	height: 105px;
+}
+
+#bottom {
+	position: absolute;
+	width: 100%;
+	height: 190px;
+	bottom: 0;
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+#dice-wrapper {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px;
+}
+
+a #dice-tab {
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	color: #005784;
+	font-weight: bold;
+}
+
+#dice-tab {
+	text-align: center;
+	line-height: 25px;
+	background: #fff;
+	border: 1px solid black;
+	width: 100px;
+	height: 25px;
+	margin:auto;
+	border-bottom: 0;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	z-index: 20;
+	margin-top: -77px;
+}
+
+#dice {
+	background: #fff;
+	height: 51px;
+	line-height: 51px;
+	width: 100%;
+	border-top: 1px solid black;
+	z-index: 10;
+}
+
+#diceBag {
+	margin: auto;
+	width: 408px;
+	background: #fff;
+	height: 51px;
+}
+
+.diceSprite {
+	background: url(../img/sprites/dice.gif) no-repeat;
+}
+
+.dice {
+	cursor: pointer;
+	float: left;
+	width: 51px;
+	height: 51px;
+	border: none;
+	opacity: 0.4;
+	-moz-opacity: 0.4;
+	filter: alpha(opacity=40);
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+
+.dice:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter: alpha(opacity=100);
+	z-index: 20;
+}
+
+.side-pannel {
+	position:absolute;
+	height: 400px;
+	width: 200px;
+	background: rgba(0,0,0,0.6);
+}
+
+.side-pannel .title {
+	text-shadow: 0 0 5px #ff0000;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+}
+
+.left-pannel { left:0; }
+.right-pannel { right:0; }
+
+.box {  }
+.p10 { padding: 10px; }
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
