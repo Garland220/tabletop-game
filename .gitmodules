@@ -1,0 +1,3 @@
+[submodule "resources/js/dices3"]
+	path = resources/js/dices3
+	url = https://github.com/Garland220/dices3

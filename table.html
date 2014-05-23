@@ -4,11 +4,11 @@
 		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/cupertino/jquery-ui.css" rel="stylesheet" type="text/css" />
 		<link href="resources/css/game.css" rel="stylesheet" type="text/css" />
 
-		<title>ZEngine 2.0</title>
+		<title>Z-Engine 3</title>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script src="resources/js/jquery-1.7.1.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-		<script src="resources/js/jquery.dices.js"></script>
+		<script src="resources/js/dices3/dices3.js"></script>
 		<script src="resources/js/game.interface.js"></script>
 		<script src="resources/js/game.js"></script>
 		<script src="resources/js/game.items.js"></script>
@@ -33,14 +33,14 @@
 				<div id="dice-wrapper" class="game-time-sensative">
 					<div id="dice" style="">
 						<div id="diceBag">
-							<a onClick="doRoll('1d4+0');" title="1d4"><div class="dice diceSprite" style="background-position: 0 0;"></div></a>
-							<a onClick="doRoll('1d6+0');" title="1d6"><div class="dice diceSprite" style="background-position: -50px 0;"></div></a>
-							<a onClick="doRoll('1d8+0');" title="1d8"><div class="dice diceSprite" style="background-position: -99px 0;"></div></a>
-							<a onClick="doRoll('1d10+0');" title="1d10"><div class="dice diceSprite" style="background-position: -149px 0;"></div></a>
-							<a onClick="doRoll('1d100+0',10);" title="1d100"><div class="dice diceSprite" style="background-position: -199px 0;"></div></a>
-							<a onClick="doRoll('1d12+0');" title="1d12"><div class="dice diceSprite" style="background-position: -249px 0;"></div></a>
-							<a onClick="doRoll('1d20+0');" title="1d20"><div class="dice diceSprite" style="background-position: -300px 0;"></div></a>
-							<a onClick="percRoll();" style="text-decoration: none;" title="1d100"><div class="dice" style="border: none; color: #9f1b1a; font-size: 50px; text-indent: 3px;">%</div></a>
+							<a onClick="dices.roll('1d4');" title="1d4"><div class="dice diceSprite" style="background-position: 0 0;"></div></a>
+							<a onClick="dices.roll('1d6');" title="1d6"><div class="dice diceSprite" style="background-position: -50px 0;"></div></a>
+							<a onClick="dices.roll('1d8');" title="1d8"><div class="dice diceSprite" style="background-position: -99px 0;"></div></a>
+							<a onClick="dices.roll('1d10');" title="1d10"><div class="dice diceSprite" style="background-position: -149px 0;"></div></a>
+							<a onClick="dices.roll('1d10', {multiplier: 10});" title="1d100"><div class="dice diceSprite" style="background-position: -199px 0;"></div></a>
+							<a onClick="dices.roll('1d12');" title="1d12"><div class="dice diceSprite" style="background-position: -249px 0;"></div></a>
+							<a onClick="dices.roll('1d20');" title="1d20"><div class="dice diceSprite" style="background-position: -300px 0;"></div></a>
+							<a onClick="dices.roll('1d100');" style="text-decoration: none;" title="1d100"><div class="dice" style="border: none; color: #9f1b1a; font-size: 50px; text-indent: 3px;">%</div></a>
 						</div><br class="clear" />
 					</div>
 					<a href="#"><div id="dice-tab" style="">Dice</div></a>
